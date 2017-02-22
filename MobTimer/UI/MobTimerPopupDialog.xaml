@@ -1,0 +1,22 @@
+﻿<ui:DialogWindow x:Class="MobTimer.UI.MobTimerPopupDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ui="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Shell.14.0"
+    xmlns:local="clr-namespace:MobTimer"
+    Title="Time's up!" Height="208.719" Width="355.967" ResizeMode="NoResize">
+    <Grid>
+        <Button x:Name="goButton" Click="goButton_Click" Content="Go!" FontSize="18" Margin="111,125,111,0" VerticalAlignment="Top" Height="31"/>
+        <Label x:Name="label" Content="Next up is:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="81"/>
+        <Label x:Name="nextUpNameLabel" FontSize="36" HorizontalAlignment="Center" Margin="7,32,36,0" VerticalAlignment="Top" Width="305" Height="56" RenderTransformOrigin="0.5,0.5" HorizontalContentAlignment="Center">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-10.126"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Button x:Name="cancelButton" Click="cancelButton_Click" Content="Cancel" HorizontalAlignment="Left" Margin="242,136,0,0" VerticalAlignment="Top" Width="75"/>
+    </Grid>
+</ui:DialogWindow>

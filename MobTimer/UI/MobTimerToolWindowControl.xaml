@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="MobTimer.UI.MobTimerToolWindowControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vs_shell="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Shell.14.0"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300"
+             Name="MobTimerToolWindow">
+    <UserControl.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static vs_shell:EnvironmentColors.ToolWindowTextBrushKey}}"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static vs_shell:EnvironmentColors.ToolWindowTextBrushKey}}"/>
+            <Setter Property="Background" Value="{DynamicResource {x:Static vs_shell:EnvironmentColors.DropDownBackgroundBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource {x:Static vs_shell:EnvironmentColors.DropDownBorderBrushKey}}"/>
+        </Style>
+        <Style TargetType="ListBox">
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static vs_shell:EnvironmentColors.ToolWindowTextBrushKey}}"/>
+            <Setter Property="Background" Value="{DynamicResource {x:Static vs_shell:EnvironmentColors.DropDownBackgroundBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource {x:Static vs_shell:EnvironmentColors.DropDownBorderBrushKey}}"/>
+        </Style>
+        <Style TargetType="ProgressBar">
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static vs_shell:EnvironmentColors.ToolWindowTextBrushKey}}"/>
+            <Setter Property="Background" Value="{DynamicResource {x:Static vs_shell:EnvironmentColors.ToolWindowBackgroundBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource {x:Static vs_shell:EnvironmentColors.AccentBorderBrushKey}}"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Button Content="Start" Click="startButton_Click" Height="20" x:Name="startButton" Margin="0,35,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="53" RenderTransformOrigin="0.844,0.553"/>
+        <ListBox x:Name="mobMemberList" Margin="10,35,68,101"/>
+        <TextBox x:Name="timerSetting" HorizontalAlignment="Right" Height="20" Margin="0,10,10,0" TextWrapping="Wrap" Text="11"  VerticalAlignment="Top" Width="53" FontSize="12"/>
+        <TextBox x:Name="newMemberTextBox" KeyUp="newMemberTextBox_KeyUp" Height="20" Margin="10,10,120,0" TextWrapping="Wrap"  VerticalAlignment="Top" FontSize="12" Text=""/>
+        <Button Content="Add" Click="addNewMemberButton_Click" Height="20" x:Name="addNewMemberButton" Margin="0,10,68,0" FontSize="12" VerticalAlignment="Top" HorizontalAlignment="Right" Width="47" RenderTransformOrigin="0.5,0.5"/>
+        <Label x:Name="timerCountdownLabel" Content="00:00" HorizontalAlignment="Right" Margin="0,86,0,0" Width="63" Height="34" VerticalAlignment="Top" FontSize="20"/>
+        <Button Content="Up" Click="upButton_Click" Height="20" x:Name="upButton" Margin="0,129,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="53" RenderTransformOrigin="0.844,0.553"/>
+        <Button Content="Down" Click="downButton_Click" Height="20" x:Name="downButton" Margin="0,154,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="53" RenderTransformOrigin="0.844,0.553"/>
+        <Button Content="Remove" Click="removeButton_Click" Height="20" x:Name="removeButton" Margin="0,179,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="53" RenderTransformOrigin="0.844,0.553"/>
+        <Label x:Name="currentDriver" Content="" FontSize="20" Margin="92,0,21,62" VerticalAlignment="Bottom" Height="35" VerticalContentAlignment="Center" Grid.IsSharedSizeScope="True"/>
+        <Label x:Name="currentDriverLabel" Content="Driving:" FontSize="18" Margin="10,0,0,62" VerticalAlignment="Bottom" Height="35" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="82" />
+        <Label x:Name="currentGuider" Content="" FontSize="20" Margin="92,0,21,27" VerticalAlignment="Bottom" Height="35" VerticalContentAlignment="Center" Grid.IsSharedSizeScope="True"/>
+        <Label x:Name="currentGuiderLabel" Content="Guiding:" FontSize="18" Margin="10,0,0,27" VerticalAlignment="Bottom" Height="35" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="82" />
+        <Button Content="Pause" Click="pauseButton_Click" Height="20" x:Name="pauseButton" Margin="0,60,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="53" RenderTransformOrigin="0.844,0.553"/>
+        <ProgressBar x:Name="progressBar" Height="13" Margin="10,0,10,9" VerticalAlignment="Bottom" Maximum="1" Value="0.5"/>
+    </Grid>
+</UserControl>
